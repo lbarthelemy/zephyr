@@ -1,0 +1,11 @@
+# Kconfig - FRDM-KL27Z board
+#
+# Copyright (c) 2017, NXP
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+config BOARD_FRDM_KL27Z
+	bool "NXP FRDM-KL27Z"
+	depends on SOC_SERIES_KINETIS_KL2X
+	select SOC_PART_NUMBER_MKL27Z64VLH4

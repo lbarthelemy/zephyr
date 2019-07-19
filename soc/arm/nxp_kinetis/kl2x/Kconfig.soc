@@ -20,6 +20,17 @@ config SOC_MKL25Z4
 	select HAS_OSC
 	select HAS_MCG
 
+config SOC_MKL27Z644
+    bool "SOC_MKL27Z644"
+	select CPU_CORTEX_M0PLUS
+	select HAS_MCUX
+	select HAS_MCUX_ADC16
+	select HAS_MCUX_FTFX
+	select HAS_MCUX_LPUART
+	select HAS_MCUX_SIM
+    select HAS_OSC
+	select HAS_MCG
+
 endchoice
 
 if SOC_SERIES_KINETIS_KL2X
@@ -60,6 +71,9 @@ config SOC_PART_NUMBER_MKL25Z64VLK4
 config SOC_PART_NUMBER_MKL25Z128VLK4
 	bool
 
+config SOC_PART_NUMBER_MKL27Z64VLH4
+    bool
+
 config SOC_PART_NUMBER_KINETIS_KL2X
 	string
 	default "MKL25Z32VFM4" if SOC_PART_NUMBER_MKL25Z32VFM4
@@ -74,6 +88,7 @@ config SOC_PART_NUMBER_KINETIS_KL2X
 	default "MKL25Z32VLK4" if SOC_PART_NUMBER_MKL25Z32VLK4
 	default "MKL25Z64VLK4" if SOC_PART_NUMBER_MKL25Z64VLK4
 	default "MKL25Z128VLK4" if SOC_PART_NUMBER_MKL25Z128VLK4
+	default "MKL27Z64VLH4" if SOC_PART_NUMBER_MKL27Z64VLH4
 	help
 	  This string holds the full part number of the SoC. It is a hidden option
 	  that you should not set directly. The part number selection choice defines
