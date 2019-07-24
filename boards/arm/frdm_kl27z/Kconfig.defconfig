@@ -34,10 +34,10 @@ config PINMUX_MCUX_PORTB
 	default y
 
 config PINMUX_MCUX_PORTC
-	default n
+	default y
 
 config PINMUX_MCUX_PORTD
-	default y
+	default y if I2C_1
 
 config PINMUX_MCUX_PORTE
 	default y if I2C_0
@@ -53,13 +53,13 @@ config GPIO_MCUX_PORTB
 	default y
 
 config GPIO_MCUX_PORTC
-	default n
+	default y
 
 config GPIO_MCUX_PORTD
 	default y
 
 config GPIO_MCUX_PORTE
-	default n
+	default y
 
 endif # GPIO_MCUX
 
@@ -73,6 +73,9 @@ endif # UART_MCUX_LPUART
 if I2C
 
 config I2C_0
+	default n
+
+config I2C_1
 	default y
 
 endif # I2C

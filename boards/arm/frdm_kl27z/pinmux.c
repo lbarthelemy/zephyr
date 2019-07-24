@@ -40,9 +40,9 @@ static int frdm_kl27z_pinmux_init(struct device *dev)
 #endif
 
 	/* SW0 and SW1 */
-/*	pinmux_pin_set(porta, 16, PORT_PCR_MUX(kPORT_MuxAsGpio));
-	pinmux_pin_set(porta, 17, PORT_PCR_MUX(kPORT_MuxAsGpio));
-*/
+	pinmux_pin_set(porta, 4, PORT_PCR_MUX(kPORT_MuxAsGpio));
+	pinmux_pin_set(portc, 1, PORT_PCR_MUX(kPORT_MuxAsGpio));
+
 	/* Red, green, blue LEDs. */
 
 	pinmux_pin_set(portb, 18, PORT_PCR_MUX(kPORT_MuxAsGpio));
@@ -50,15 +50,23 @@ static int frdm_kl27z_pinmux_init(struct device *dev)
 	pinmux_pin_set(porta, 13, PORT_PCR_MUX(kPORT_MuxAsGpio));
 
 	/* MMA8451 INT1, INT2 */
-/*
-	pinmux_pin_set(porta, 14, PORT_PCR_MUX(kPORT_MuxAsGpio));
-	pinmux_pin_set(porta, 15, PORT_PCR_MUX(kPORT_MuxAsGpio));
-*/
+
+	pinmux_pin_set(portc, 3, PORT_PCR_MUX(kPORT_MuxAsGpio));
+	pinmux_pin_set(portc, 2, PORT_PCR_MUX(kPORT_MuxAsGpio));
+
 #if defined(CONFIG_I2C_0)
 	/* I2C0 SCL, SDA */
 	pinmux_pin_set(porte,  24, PORT_PCR_MUX(kPORT_MuxAlt5)
 					| PORT_PCR_PS_MASK);
 	pinmux_pin_set(porte,  25, PORT_PCR_MUX(kPORT_MuxAlt5)
+					| PORT_PCR_PS_MASK);
+#endif
+
+#if defined(CONFIG_I2C_1)
+	/* I2C1 SCL, SDA */
+	pinmux_pin_set(portd,  7, PORT_PCR_MUX(kPORT_MuxAlt4)
+					| PORT_PCR_PS_MASK);
+	pinmux_pin_set(portd,  6, PORT_PCR_MUX(kPORT_MuxAlt4)
 					| PORT_PCR_PS_MASK);
 #endif
 
