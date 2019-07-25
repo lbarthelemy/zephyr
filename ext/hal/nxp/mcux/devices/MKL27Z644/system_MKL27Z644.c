@@ -107,13 +107,7 @@ void SystemInit (void) {
   /* SIM->COPC: ?=0,COPCLKSEL=0,COPDBGEN=0,COPSTPEN=0,COPT=0,COPCLKS=0,COPW=0 */
   SIM->COPC = (uint32_t)0x00u;
 #endif /* (DISABLE_WDOG) */
-    volatile long * regtx = (long*)0x4005400C;
-    *regtx = 'a';
-        
-    volatile long * regled = (long*)0x400FF000;
-    *regled = 1lkdmsql
 
-fdskjfldskj
   SystemInitHook();
 }
 
@@ -150,7 +144,4 @@ void SystemCoreClockUpdate (void) {
 
 __attribute__ ((weak)) void SystemInitHook (void) {
   /* Void implementation of the weak function. */
-    //*(0x4005700)='a';
-    //0x4005400C = 'a';
-
 }
